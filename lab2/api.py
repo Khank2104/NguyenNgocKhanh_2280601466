@@ -14,7 +14,7 @@ def caesar_encrypt():
     plain_text = data['plain_text']
     key = int(data['key'])
     encrypt_text = caesar_cipher.encrypt_text(plain_text, key)
-    return jsonify({'encrypted_message': encrypt_text})
+    return jsonify({'encrypted_text': encrypt_text})
 
 @app.route("/api/caesar/decrypt", methods = ["POST"])
 def caesar_decrypt():
@@ -22,7 +22,7 @@ def caesar_decrypt():
     cipher_text = data['cipher_text']
     key = int(data['key'])
     decrypted_text = caesar_cipher.decrypt_text(cipher_text, key)
-    return jsonify({'decrypted_message': decrypted_text})
+    return jsonify({'decrypted_text': decrypted_text})
 # VIGENERE CIPHER ALGORITHM
 vigenere_cipher = VigenereCipher()
 
@@ -61,6 +61,7 @@ def decrypt():
     key = int(data['key'])
     decrypted_text = railfence_cipher.rail_fence_decrypt(cipher_text, key)
     return jsonify({'decrypted_text': decrypted_text})
+
 playfair_cipher = PlayFairCipher()
 
 # Thêm vào phần đầu của
