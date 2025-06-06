@@ -1,12 +1,12 @@
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QMessageBox
-from ui.rsa import Ui_MainWindow
+from ui.rsa import Ui_Dialog
 import requests
 
 class MyApp(QMainWindow):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_MainWindow()
+        self.ui = Ui_Dialog()
         self.ui.setupUi(self)
         self.ui.btngenkey.clicked.connect(self.call_api_gen_keys)  # Sửa btn_gen_keys thành btngenkey
         self.ui.btn_encrypt.clicked.connect(self.call_api_encrypt)
